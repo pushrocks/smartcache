@@ -1,0 +1,24 @@
+{
+  "name": "smartcache",
+  "version": "1.0.1",
+  "private": false,
+  "description": "cache things in smart ways",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "author": "Lossless GmbH",
+  "license": "MIT",
+  "scripts": {
+    "test": "(tsrun test/test.ts)",
+    "build": "(npmts)"
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.2"
+  },
+  "dependencies": {
+    "@pushrocks/smartdelay": "^2.0.1",
+    "@pushrocks/smarterror": "^2.0.1",
+    "@pushrocks/smartpromise": "^2.0.5",
+    "@pushrocks/smarttime": "^2.0.1",
+    "nodehash": "^1.0.4"
+  }
+}
