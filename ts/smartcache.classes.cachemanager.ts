@@ -20,9 +20,12 @@ export class CacheManager {
   }
 
   stillValid(identifierArg: string): boolean {
-    if (this.cacheExists(identifierArg) && this._cacheMap[identifierArg].timer.startedAt.isYoungerThanMilliSeconds(
-      this._cacheMap[identifierArg].timer.timeInMilliseconds
-    )) {
+    if (
+      this.cacheExists(identifierArg) &&
+      this._cacheMap[identifierArg].timer.startedAt.isYoungerThanMilliSeconds(
+        this._cacheMap[identifierArg].timer.timeInMilliseconds
+      )
+    ) {
       return true;
     }
     return false;
@@ -37,21 +40,23 @@ export class CacheManager {
     };
     this._cacheMap[identifierArg].timer.start();
     this._cacheMap[identifierArg].timer.completed.then(() => {
-      this.deleteCache(identifierArg)
+      this.deleteCache(identifierArg);
     });
   }
 
   /**
    * waits for the cache to be ready
    */
-  async waitForCacheReady (identifierArg: string) {
-    await this._cacheMap[identifierArg].cachedDeferred.promise
+  async waitForCacheReady(identifierArg: string) {
+    await this._cacheMap[identifierArg].cachedDeferred.promise;
     return true;
   }
 
   setCache(identifierArg: string, cachedObjectArg: any, validForArg = 1000) {
-    if(!this.cacheExists(identifierArg)) {
-      console.log(new SmartError(`Cache for ${identifierArg} has not been announced or timed out!`));
+    if (!this.cacheExists(identifierArg)) {
+      console.log(
+        new SmartError(`Cache for ${identifierArg} has not been announced or timed out!`)
+      );
     }
     this._cacheMap[identifierArg].cachedObject = cachedObjectArg;
     this._cacheMap[identifierArg].cachedDeferred.resolve();

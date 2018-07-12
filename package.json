@@ -12,7 +12,9 @@
     "build": "(npmts)"
   },
   "devDependencies": {
-    "@types/node": "^10.5.2"
+    "@gitzone/tsrun": "^1.1.2",
+    "@types/node": "^10.5.2",
+    "tapbundle": "^2.0.2"
   },
   "dependencies": {
     "@pushrocks/smartdelay": "^2.0.1",
