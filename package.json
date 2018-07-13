@@ -1,6 +1,6 @@
 {
   "name": "smartcache",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "description": "cache things in smart ways",
   "main": "dist/index.js",
