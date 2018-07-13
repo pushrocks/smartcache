@@ -1,5 +1,5 @@
 {
-  "name": "smartcache",
+  "name": "@pushrocks/smartcache",
   "version": "1.0.4",
   "private": false,
   "description": "cache things in smart ways",
