@@ -1,4 +1,4 @@
-import { expect, tap } from "tapbundle";
+import { expect, tap } from "@pushrocks/tapbundle";
 import * as smartcache from "../ts/index";
 import * as smartdelay from "@pushrocks/smartdelay";
 
