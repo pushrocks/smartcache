@@ -8,7 +8,7 @@ export class SmartCache {
     let callStack: string = new plugins.smarterror.SmartError('').cleanFullStack;
     let callHash = plugins.nodehash.sha256FromStringSync(callStack);
 
-    console.log(callHash);
+    // console.log(callHash);
     if (
       this._cacheManager.cacheExists(callHash) &&
       (await this._cacheManager.waitForCacheReady(callHash)) &&
