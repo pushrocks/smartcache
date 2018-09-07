@@ -6,7 +6,7 @@ export class SmartCache {
 
   async cacheReturn(asyncCachedFuncArg: () => Promise<any>, cacheDuration: number = 5000) {
     let callStack: string = new plugins.smarterror.SmartError('').cleanFullStack;
-    let callHash = plugins.nodehash.sha256FromStringSync(callStack);
+    let callHash = plugins.smarthash.sha256FromStringSync(callStack);
 
     // console.log(callHash);
     if (
