@@ -1,6 +1,6 @@
 {
   "name": "@pushrocks/smartcache",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "private": false,
   "description": "cache things in smart ways",
   "main": "dist/index.js",
