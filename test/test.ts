@@ -40,8 +40,8 @@ tap.test("try to get async responses", async () => {
   getResponse();
   getResponse2();
   getResponse2();
-  smartdelay.delayFor(1000).then(() => {
-    getResponse();
+  await smartdelay.delayFor(1000).then(async () => {
+    await getResponse();
     // getResponse2();
   });
 });
