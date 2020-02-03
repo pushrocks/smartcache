@@ -5,8 +5,8 @@ export class SmartCache {
   private _cacheManager = new CacheManager();
 
   async cacheReturn(asyncCachedFuncArg: () => Promise<any>, cacheDuration: number = 5000) {
-    let callStack: string = new plugins.smarterror.SmartError('').cleanFullStack;
-    let callHash = plugins.smarthash.sha256FromStringSync(callStack);
+    const callStack: string = new plugins.smarterror.SmartError('Cache Creation Point').cleanFullStack.split('\n')[2];
+    const callHash = plugins.smarthash.sha256FromStringSync(callStack);
 
     // console.log(callHash);
     if (
@@ -17,7 +17,7 @@ export class SmartCache {
       return this._cacheManager.getCache(callHash).cachedObject;
     } else {
       this._cacheManager.announceCache(callHash, cacheDuration);
-      let newCachedObject = await asyncCachedFuncArg();
+      const newCachedObject = await asyncCachedFuncArg();
       this._cacheManager.setCache(callHash, newCachedObject, cacheDuration);
       return newCachedObject;
     }

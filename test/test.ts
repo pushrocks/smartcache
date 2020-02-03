@@ -13,7 +13,7 @@ tap.test('try to get async responses', async () => {
   const getResponse = async () => {
     const response = await smartcacheInstance
       .cacheReturn(async () => {
-        console.log('function ran');
+        console.log('function 1 ran');
         return 'hello';
       }, 1000)
       .catch(err => {
@@ -27,7 +27,7 @@ tap.test('try to get async responses', async () => {
     const response = await smartcacheInstance
       .cacheReturn(async () => {
         console.log('function 2 ran');
-        return 'hello';
+        return 'hello there!';
       }, 1000)
       .catch(err => {
         console.log(err);
@@ -36,13 +36,13 @@ tap.test('try to get async responses', async () => {
     console.log(response);
   };
 
-  getResponse();
-  getResponse();
-  getResponse2();
-  getResponse2();
-  await smartdelay.delayFor(1000).then(async () => {
+  await getResponse();
+  await getResponse();
+  await getResponse2();
+  await getResponse2();
+  await smartdelay.delayFor(2000).then(async () => {
     await getResponse();
-    // getResponse2();
+    await getResponse2();
   });
 });
 
