@@ -36,7 +36,7 @@ export class CacheManager {
     this._cacheMap[identifierArg] = {
       timer: new plugins.smarttime.Timer(validForArg),
       cachedDeferred: new plugins.smartpromise.Deferred(),
-      cachedObject: null
+      cachedObject: null,
     };
     this._cacheMap[identifierArg].timer.start();
     this._cacheMap[identifierArg].timer.completed.then(() => {
